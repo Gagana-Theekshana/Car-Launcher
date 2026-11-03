@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogAcRoot"
+    android:layout_width="760dp"
+    android:layout_height="wrap_content"
+    android:background="#0D1117"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- =================================================================== -->
+    <!-- HEADER: TOYOTA AQUA (NHP10) DIGITAL CLIMATE AMPLIFIER               -->
+    <!-- =================================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TOYOTA AQUA NHP10 • DIGITAL CLIMATE AMPLIFIER"
+                android:textColor="#00E5FF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvDialogAcTelemetrySub"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="CABIN: 26.5°C  •  OUTSIDE: 30.0°C  •  CANBUS TX: 0xA8"
+                android:textColor="#90A4AE"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAcDialogClose"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:background="#1F2937"
+            android:paddingStart="14dp"
+            android:paddingEnd="14dp"
+            android:text="CLOSE [X]"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp"
+        android:background="#1F2937" />
+
+    <!-- =================================================================== -->
+    <!-- TEMPERATURE CONTROL ROW ([-], 24.0°C DISPLAY, [+], AUTO, OFF)       -->
+    <!-- =================================================================== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:background="#141C24"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <!-- [-] 0.5°C Step Button -->
+        <Button
+            android:id="@+id/btnAcTempDown"
+            android:layout_width="84dp"
+            android:layout_height="match_parent"
+            android:background="#102C3E"
+            android:text="[-] 0.5°"
+            android:textColor="#00E5FF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- Large Target Temperature Digital Readout -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:background="#0D1117"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TARGET CLIMATE TEMPERATURE"
+                android:textColor="#90A4AE"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAcTargetTempLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24.0°C"
+                android:textColor="#FFFFFF"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:typeface="monospace" />
+        </LinearLayout>
+
+        <!-- [+] 0.5°C Step Button -->
+        <Button
+            android:id="@+id/btnAcTempUp"
+            android:layout_width="84dp"
+            android:layout_height="match_parent"
+            android:background="#3B1520"
+            android:text="[+] 0.5°"
+            android:textColor="#FF1744"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!-- AUTO Climate Master Button -->
+        <Button
+            android:id="@+id/btnAcAutoMaster"
+            android:layout_width="96dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:background="#00E676"
+            android:text="AUTO"
+            android:textColor="#0D1117"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- =================================================================== -->
+    <!-- FAN SPEED SELECTOR BAR (OFF, 1, 2, 3, 4, 5, 6, 7, AUTO)             -->
+    <!-- =================================================================== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="BLOWER FAN SPEED LEVEL (0 - 7)"
+        android:textColor="#90A4AE"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:weightSum="9">
+
+        <Button
+            android:id="@+id/btnFanOff"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="#263238"
+            android:text="OFF"
+            android:textColor="#FF1744"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFan1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="1"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFan2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="2"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFan3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="#00E5FF"
+            android:text="3"
+            android:textColor="#0D1117"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFan4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="4"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFan5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="5"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFan6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="6"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFan7"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="7"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnFanAuto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#1E3A2F"
+            android:text="AUTO"
+            android:textColor="#00E676"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- =================================================================== -->
+    <!-- AIRFLOW MODE BUTTONS (FACE, BI-LEVEL, FEET, FEET/DEF, DEFROST)      -->
+    <!-- =================================================================== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="VENT AIRFLOW DIRECTION MODE"
+        android:textColor="#90A4AE"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <Button
+            android:id="@+id/btnModeFace"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="#00E5FF"
+            android:text="FACE"
+            android:textColor="#0D1117"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnModeFaceFeet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="BI-LEVEL"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnModeFeet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="FEET"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnModeFeetDefrost"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="4dp"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="FEET/DEF"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnModeDefrost"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#141C24"
+            android:text="DEFROST"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- =================================================================== -->
+    <!-- CLIMATE AMPLIFIER TOGGLE SWITCHES (5 HARDWARE FUNCTIONS)            -->
+    <!-- =================================================================== -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="COMPRESSOR, RECIRCULATION &amp; DEFOGGER RELAYS"
+        android:textColor="#90A4AE"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="#141C24"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!-- Row 1 of Switches -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <Switch
+                android:id="@+id/switchAcCompressor"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="A/C Compressor"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/switchEcoHeatCool"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Eco Heat/Cool"
+                android:textColor="#00E676"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/switchRecirculation"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="Recirculation"
+                android:textColor="#00E5FF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Row 2 of Switches -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Switch
+                android:id="@+id/switchFrontDefrostMax"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="Front Defrost Max"
+                android:textColor="#FFAB00"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/switchRearWindowDefogger"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:checked="false"
+                android:text="Rear Window Defogger"
+                android:textColor="#FFAB00"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
+
